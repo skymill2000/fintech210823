@@ -1,5 +1,7 @@
 //c java
 //public String name;
+//private Stirng name;
+//protect String test;
 
 let name = "hong gil dong";
 let name2 = 2100;
