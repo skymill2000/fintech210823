@@ -3,7 +3,8 @@
 
 let name = "hong gil dong";
 let name2 = 2100;
+
 const test = "test";
-test = "new Test";
+// test = "new Test";
 
 console.log(name, name2, test);
