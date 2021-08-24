@@ -9,10 +9,15 @@ const EventExample = () => {
     setContents(value);
   };
 
+  const handleClick = () => {
+    alert(contents);
+  };
+
   return (
     <div>
       <p>{contents}</p>
       <input onChange={handleChange}></input>
+      <button onClick={handleClick}>확인</button>
     </div>
   );
 };
