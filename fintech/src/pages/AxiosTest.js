@@ -4,6 +4,9 @@ import axios from "axios";
 const AxiosTest = () => {
   const handleGetData = () => {
     console.log("버튼 이벤트");
+    axios.get("https://naver.com").then((response) => {
+      console.log(response);
+    });
   };
 
   return (
