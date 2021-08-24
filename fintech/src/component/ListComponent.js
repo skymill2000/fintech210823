@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ListItem from "./ListItem";
 
 const ListComponent = () => {
   const [users, setUsers] = useState([
@@ -11,9 +12,11 @@ const ListComponent = () => {
     <div>
       {users.map((user) => {
         return (
-          <p>
-            {user.name} {user.age} {user.height}
-          </p>
+          <ListItem
+            username={user.name}
+            age={user.age}
+            height={user.height}
+          ></ListItem>
         );
       })}
     </div>
