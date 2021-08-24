@@ -1,13 +1,15 @@
 import Header from "./component/Header";
 import EventExample from "./component/EventExample";
 import ListComponent from "./component/ListComponent";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Header title="메인화면"></Header>
-      <ListComponent></ListComponent>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/test" exact></Route>
+      </Switch>
+    </Router>
   );
 }
 
