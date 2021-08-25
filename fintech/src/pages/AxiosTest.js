@@ -4,9 +4,13 @@ import axios from "axios";
 const AxiosTest = () => {
   const handleGetData = () => {
     console.log("버튼 이벤트");
-    axios.get("https://naver.com").then((response) => {
-      console.log(response);
-    });
+    axios
+      .get(
+        "https://newsapi.org/v2/everything?q=kpop&from=2021-07-24&sortBy=publishedAt&apiKey=78bc6ddd8cdb48ceac76f5f9b9dfc4c5&language=ko"
+      )
+      .then((response) => {
+        console.log(response);
+      });
   };
 
   return (
