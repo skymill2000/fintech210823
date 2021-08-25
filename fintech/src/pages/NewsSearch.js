@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../component/Header";
 import SearchInput from "../component/newsSearch/SearchInput";
+import axios from "axios";
 
 const NewsSearch = () => {
   const [serachText, setSearchText] = useState();
@@ -13,7 +14,14 @@ const NewsSearch = () => {
 
   const handleSearchButtonClick = () => {
     console.log(serachText);
-    //#work2 뉴스 API 요청 전달하고 searchResult 변경하기
+    axios
+      .get(
+        `https://newsapi.org/v2/everything?q=${serachText}&from=2021-08-01&sortBy=publishedAt&apiKey=78bc6ddd8cdb48ceac76f5f9b9dfc4c5&language=ko`
+      )
+      .then((response) => {
+        console.log(response.data.articles);
+        setSearchResult(response.data.articles);
+      });
   };
 
   return (
