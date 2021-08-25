@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../component/Header";
 import SearchInput from "../component/newsSearch/SearchInput";
 import axios from "axios";
+import NewsList from "../component/newsSearch/NewsList";
 
 const NewsSearch = () => {
   const [serachText, setSearchText] = useState();
@@ -31,6 +32,7 @@ const NewsSearch = () => {
         handleInput={handleSearchTextChange}
         handleClick={handleSearchButtonClick}
       ></SearchInput>
+      <NewsList searchResult={searchResult}></NewsList>
     </div>
   );
 };
