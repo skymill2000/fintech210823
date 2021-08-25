@@ -6,7 +6,7 @@ import NewsList from "../component/newsSearch/NewsList";
 
 const NewsSearch = () => {
   const [serachText, setSearchText] = useState();
-  const [searchResult, setSearchResult] = useState();
+  const [searchResult, setSearchResult] = useState([]);
 
   const handleSearchTextChange = (e) => {
     const { value } = e.target;
