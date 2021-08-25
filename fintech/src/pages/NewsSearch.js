@@ -11,10 +11,18 @@ const NewsSearch = () => {
     setSearchText(value);
   };
 
+  const handleSearchButtonClick = () => {
+    console.log(serachText);
+    //#work2 뉴스 API 요청 전달하고 searchResult 변경하기
+  };
+
   return (
     <div>
       <Header title="뉴스 검색"></Header>
-      <SearchInput handleInput={handleSearchTextChange}></SearchInput>
+      <SearchInput
+        handleInput={handleSearchTextChange}
+        handleClick={handleSearchButtonClick}
+      ></SearchInput>
     </div>
   );
 };
