@@ -13,9 +13,9 @@ const TransactionList = ({ transactionList }) => {
           </tr>
         </thead>
         <tbody>
-          {transactionList.map((transaction) => {
+          {transactionList.map((transaction, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td>{transaction.tran_date}</td>
                 <td>{transaction.print_content}</td>
                 <td>{transaction.tran_amt}</td>
