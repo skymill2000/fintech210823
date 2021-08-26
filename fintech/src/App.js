@@ -6,6 +6,8 @@ import Balance from "./pages/Balance";
 import Main from "./pages/Main";
 import NewsSearch from "./pages/NewsSearch";
 import QrCode from "./pages/QrCode";
+import QrcodeReader from "./pages/QrcodeReader";
+import QrReader from "./pages/QrcodeReader";
 
 function App() {
   return (
@@ -31,6 +33,9 @@ function App() {
         </Route>
         <Route path="/qrcode" exact>
           <QrCode></QrCode>
+        </Route>
+        <Route path="/qrreader" exact>
+          <QrcodeReader></QrcodeReader>
         </Route>
       </Switch>
     </Router>
