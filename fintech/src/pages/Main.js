@@ -11,6 +11,20 @@ const Main = () => {
   const getAccountList = () => {
     const accessToken = localStorage.getItem("accessToken");
     const userSeqNo = localStorage.getItem("userSeqNo");
+    const option = {
+      method: "GET",
+      url: `/v2.0/user/me`,
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+      params: {
+        user_seq_no: userSeqNo,
+      },
+    };
+    axios(option).then(({ data }) => {
+      console.log(data);
+    });
+
     //#work4 사용자 계좌 목록 요청 만들기
   };
 
