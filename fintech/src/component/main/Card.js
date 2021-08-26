@@ -40,13 +40,21 @@ const ButtonBlock = styled.div`
 `;
 
 const Card = ({ bankName, fintechUseNo }) => {
+  const handleQrClick = () => {
+    window.location.href = "";
+  };
+
+  const handleBalanceClick = () => {
+    window.location.href = "";
+  };
+
   return (
     <CardBlock>
       <CardTitle>{bankName}</CardTitle>
       <FintechUseNo>{fintechUseNo}</FintechUseNo>
       <ButtonBlock>
-        <QrButton>qr코드</QrButton>
-        <BalanceButton>잔액조회</BalanceButton>
+        <QrButton onClick={handleQrClick}>qr코드</QrButton>
+        <BalanceButton onClick={handleBalanceClick}>잔액조회</BalanceButton>
       </ButtonBlock>
     </CardBlock>
   );
