@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Header from "../component/Header";
+import Card from "../component/main/Card";
 const Main = () => {
   const [accountList, setAccountList] = useState([]);
   useEffect(() => {
@@ -32,7 +33,14 @@ const Main = () => {
   return (
     <div>
       <Header title={"메인"}></Header>
-      {accountList.map((account) => {})}
+      {accountList.map((account) => {
+        return (
+          <Card
+            bankName={account.bank_name}
+            fintechUseNo={account.fintech_use_num}
+          ></Card>
+        );
+      })}
     </div>
   );
 };
