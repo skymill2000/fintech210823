@@ -44,6 +44,8 @@ const AuthResult = () => {
       localStorage.setItem("accessToken", response.data.access_token);
       localStorage.setItem("userSeqNo", response.data.user_seq_no);
       //로컬 스토리지에 데이터 저장
+      window.opener.location.href = "/main";
+      window.close();
     });
     //axios 오브젝트 설정
   };
