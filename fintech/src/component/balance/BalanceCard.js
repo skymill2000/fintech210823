@@ -21,12 +21,12 @@ const BalanceText = styled.div`
   text-align: right;
 `;
 
-const BalanceCard = () => {
+const BalanceCard = ({ bankName, fintechNo, balance }) => {
   return (
     <BalanceBlock>
-      <BankName>test</BankName>
-      <FintechNo>test</FintechNo>
-      <BalanceText>test</BalanceText>
+      <BankName>{bankName}</BankName>
+      <FintechNo>{fintechNo}</FintechNo>
+      <BalanceText>{balance}원</BalanceText>
     </BalanceBlock>
   );
 };
