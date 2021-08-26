@@ -41,7 +41,7 @@ const ButtonBlock = styled.div`
 
 const Card = ({ bankName, fintechUseNo }) => {
   const handleQrClick = () => {
-    window.location.href = "";
+    window.location.href = `/qrcode?fintechUseNo=${fintechUseNo}`;
   };
 
   const handleBalanceClick = () => {
