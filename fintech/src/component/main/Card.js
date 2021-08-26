@@ -39,8 +39,17 @@ const ButtonBlock = styled.div`
   flex-direction: row;
 `;
 
-const Card = () => {
-  return <div></div>;
+const Card = ({ bankName, fintechUseNo }) => {
+  return (
+    <CardBlock>
+      <CardTitle>{bankName}</CardTitle>
+      <FintechUseNo>{fintechUseNo}</FintechUseNo>
+      <ButtonBlock>
+        <QrButton>qr코드</QrButton>
+        <BalanceButton>잔액조회</BalanceButton>
+      </ButtonBlock>
+    </CardBlock>
+  );
 };
 
 export default Card;
