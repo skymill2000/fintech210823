@@ -45,7 +45,7 @@ const Card = ({ bankName, fintechUseNo }) => {
   };
 
   const handleBalanceClick = () => {
-    window.location.href = "";
+    window.location.href = `/balance?fintechUseNo=${fintechUseNo}`;
   };
 
   return (

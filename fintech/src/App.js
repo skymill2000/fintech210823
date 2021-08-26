@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddUser from "./pages/AddUser";
 import AuthResult from "./pages/AuthResult";
 import AxiosTest from "./pages/AxiosTest";
+import Balance from "./pages/Balance";
 import Main from "./pages/Main";
 import NewsSearch from "./pages/NewsSearch";
 
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path="/main" exact>
           <Main></Main>
+        </Route>
+        <Route path="/balance" exact>
+          <Balance></Balance>
         </Route>
       </Switch>
     </Router>
