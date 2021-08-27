@@ -26,16 +26,38 @@ const ModalWithdraw = ({ tofintechno }) => {
     getAccountList();
   }, []);
 
-  const getAccountList = () => {};
+  const getAccountList = () => {
+    const accessToken = localStorage.getItem("accessToken");
+    const userSeqNo = localStorage.getItem("userSeqNo");
+    const option = {
+      method: "GET",
+      url: `/v2.0/user/me`,
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+      params: {
+        user_seq_no: userSeqNo,
+      },
+    };
+    axios(option).then(({ data }) => {
+      console.log(data);
+      setAccountList(data.res_list);
+    });
+  };
 
   return (
     <ModalWithdrawBlock>
       <Slider {...settings}>
-        <ModalCard
-          bankName="test"
-          fintechUseNo="test"
-          tofintechno="test"
-        ></ModalCard>
+        {acountList.map((account) => {
+          return (
+            <ModalCard
+              key={account.fintech_use_num}
+              bankName={account.bank_name}
+              fintechUseNo={account.fintech_use_num}
+              tofintechno={account.fintech_use_num}
+            ></ModalCard>
+          );
+        })}
       </Slider>
     </ModalWithdrawBlock>
   );

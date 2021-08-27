@@ -23,7 +23,7 @@ const CustomStyles = {
 };
 
 const QrcodeReader = () => {
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(true);
   const delay = 500;
   const previewStyle = {
     height: 375,
