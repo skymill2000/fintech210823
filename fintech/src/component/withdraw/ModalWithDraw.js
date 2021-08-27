@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
 import axios from "axios";
+import ModalCard from "./ModalCard";
 
 const ModalWithdrawBlock = styled.div`
   display: flex;
@@ -19,16 +20,19 @@ const ModalWithdraw = ({ tofintechno }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
   const [acountList, setAccountList] = useState([]);
+
   useEffect(() => {
     getAccountList();
   }, []);
+
   const getAccountList = () => {};
 
   return (
     <ModalWithdrawBlock>
-      <Slider {...settings}></Slider>
+      <Slider {...settings}>
+        <ModalCard></ModalCard>
+      </Slider>
     </ModalWithdrawBlock>
   );
 };
