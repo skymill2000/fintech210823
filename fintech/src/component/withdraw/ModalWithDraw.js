@@ -53,10 +53,10 @@ const ModalWithdraw = ({ tofintechno }) => {
         {acountList.map((account) => {
           return (
             <ModalCard
-              key={acountList[0].fintech_use_num}
-              bankName={acountList[0].bank_name}
-              fintechUseNo={acountList[0].fintech_use_num}
-              tofintechno={acountList[0].fintech_use_num}
+              key={account.fintech_use_num}
+              bankName={account.bank_name}
+              fintechUseNo={account.fintech_use_num}
+              tofintechno={account.fintech_use_num}
             ></ModalCard>
           );
         })}
