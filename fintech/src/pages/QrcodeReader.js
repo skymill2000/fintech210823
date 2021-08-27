@@ -59,7 +59,7 @@ const QrcodeReader = () => {
         onRequestClose={closeModal}
         ariaHideApp={false}
       >
-        <ModalWithdraw></ModalWithdraw>
+        <ModalWithdraw tofintechno={result}></ModalWithdraw>
       </Modal>
     </div>
   );

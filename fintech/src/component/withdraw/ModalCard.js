@@ -69,8 +69,47 @@ const ModalCard = ({ bankName, fintechUseNo, tofintechno }) => {
     axios(option).then(({ data }) => {
       console.log(data);
       if (data.rsp_code === "A0000") {
-        const twoLeggedToken = "";
         //#last work 입금 이체 발생시키기
+        deposit();
+      }
+    });
+  };
+
+  const deposit = () => {
+    const twoLeggedToken =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJUOTkxNTk5MTkwIiwic2NvcGUiOlsib29iIl0sImlzcyI6Imh0dHBzOi8vd3d3Lm9wZW5iYW5raW5nLm9yLmtyIiwiZXhwIjoxNjM3ODIwMDk0LCJqdGkiOiIxZjU3NmZmOC0xY2E5LTQwYTYtYTc2MC0wYzJkNWY3MDU0OWMifQ.gOvejpRm86zNCkTXfV9CQuv6XxtMenC54CVNeqUSSpY";
+    const option = {
+      method: "POST",
+      url: "/v2.0/transfer/deposit/fin_num",
+      headers: {
+        Authorization: `bearer ${twoLeggedToken}`,
+      },
+      data: {
+        cntr_account_type: "N",
+        cntr_account_num: "4262679045",
+        wd_pass_phrase: "NONE",
+        wd_print_content: "환불금액",
+        name_check_option: "off",
+        tran_dtime: "20200721151500",
+        req_cnt: "1",
+        req_list: [
+          {
+            tran_no: "1",
+            bank_tran_id: genTransId(),
+            fintech_use_num: tofintechno,
+            print_content: "쇼핑몰환불",
+            tran_amt: amount,
+            req_client_name: "홍길동",
+            req_client_fintech_use_num: tofintechno,
+            req_client_num: "110435475398",
+            transfer_purpose: "ST",
+          },
+        ],
+      },
+    };
+    axios(option).then(({ data }) => {
+      if (data.rsp_code === "A0000") {
+        alert("결제 완료");
       }
     });
   };

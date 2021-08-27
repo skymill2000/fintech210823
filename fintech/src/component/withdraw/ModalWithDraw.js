@@ -56,7 +56,7 @@ const ModalWithdraw = ({ tofintechno }) => {
               key={account.fintech_use_num}
               bankName={account.bank_name}
               fintechUseNo={account.fintech_use_num}
-              tofintechno={account.fintech_use_num}
+              tofintechno={tofintechno}
             ></ModalCard>
           );
         })}
