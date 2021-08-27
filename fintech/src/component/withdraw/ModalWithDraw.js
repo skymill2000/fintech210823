@@ -14,7 +14,7 @@ const ModalWithdrawBlock = styled.div`
 
 const ModalWithdraw = ({ tofintechno }) => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -48,16 +48,18 @@ const ModalWithdraw = ({ tofintechno }) => {
   return (
     <ModalWithdrawBlock>
       <Slider {...settings}>
-        {acountList.map((account) => {
-          return (
-            <ModalCard
-              key={account.fintech_use_num}
-              bankName={account.bank_name}
-              fintechUseNo={account.fintech_use_num}
-              tofintechno={account.fintech_use_num}
-            ></ModalCard>
-          );
-        })}
+        <>
+          {acountList.map((account) => {
+            return (
+              <ModalCard
+                key={acountList[0].fintech_use_num}
+                bankName={acountList[0].bank_name}
+                fintechUseNo={acountList[0].fintech_use_num}
+                tofintechno={acountList[0].fintech_use_num}
+              ></ModalCard>
+            );
+          })}
+        </>
       </Slider>
     </ModalWithdrawBlock>
   );

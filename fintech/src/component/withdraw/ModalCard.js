@@ -39,6 +39,10 @@ const ModalCard = ({ bankName, fintechUseNo, tofintechno }) => {
     return transId;
   };
 
+  const handleWithdraw = () => {
+    //사용자 출금 요청 발생
+  };
+
   return (
     <ModalCardBlock>
       <CardTitle>{bankName}</CardTitle>
