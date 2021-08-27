@@ -22,6 +22,8 @@ bubn = driver.find_element_by_xpath(
     '//*[@id="bubn"]')
 button = driver.find_element_by_xpath(
     '//*[@id="frm"]/fieldset/div[3]/p/span/a')
+
+
 sidoSelect.select_by_visible_text('전라남도')
 driver.implicitly_wait(1)
 
