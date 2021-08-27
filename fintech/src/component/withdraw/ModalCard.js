@@ -41,9 +41,9 @@ const ModalCard = ({ bankName, fintechUseNo, tofintechno }) => {
 
   return (
     <ModalCardBlock>
-      <CardTitle>{"테스트"}</CardTitle>
-      <FintechUseNo>{"테스트"}</FintechUseNo>
-      <p>{"테스트"}에 출금이체를 발생시킵니다.</p>
+      <CardTitle>{bankName}</CardTitle>
+      <FintechUseNo>{fintechUseNo}</FintechUseNo>
+      <p>{tofintechno}에 출금이체를 발생시킵니다.</p>
       <input onChange={handleAmountChange}></input>
       <WithDrawButton>결재하기</WithDrawButton>
     </ModalCardBlock>
