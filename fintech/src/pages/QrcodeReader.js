@@ -46,12 +46,12 @@ const QrcodeReader = () => {
   return (
     <div>
       <Header title={"QR 리더기"}></Header>
-      <QrReader
+      {/* <QrReader
         delay={delay}
         style={previewStyle}
         onError={handleError}
         onScan={handleScan}
-      />
+      /> */}
       <p>{result}</p>
       <Modal
         isOpen={openModal}
